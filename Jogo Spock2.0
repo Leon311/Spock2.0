@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+from random import choice
+p=['pedra', 'papel', 'tesoura', 'lagarto', 'spock']
+print("Bem vindo ao jogo mais daora ja criado, pedra papel e tesora 2.0, com 2 personagens especiais, lagarto e spock!")
+answer=input('Vamos começar?')
+if answer=="não":
+    print("Pô não me quebra")
+
+if answer=="sim":
+    pc=0
+    pu=0
+    
+    while pu<3 and pc<3:
+        computador=choice(p)
+        usuário=input("Estou pronto, escolha qual você quer : ")
+        print("eu escolhi "+computador)
+        if computador==p[0]:
+            if (usuário==p[2] or usuário==p[3]):
+             print("eu ganhei")
+             pc+=1
+             pu == 0
+            elif (usuário==p[1] or usuário==p[4]):
+             print("Você ganhou essa")
+             pu+=1
+             pc == 0
+
+        if computador==p[1] and (usuário==p[0] or usuário==[4]):
+            print("eu ganhei, ta muito facil")
+            pc+=1
+            pu == 0j
+        if computador==p[1] and (usuário==p[2] or usuário==[3]):
+            print("você ganhou")
+            pu+=1
+            pc == 0
+        if computador==p[2] and (usuário==p[1] or usuário==[3]):
+            print("eu ganhei")
+            pc+=1
+            pu == 0
+        if computador==p[2] and (usuário==p[0] or usuário==[4]):
+            print("You win")
+            pu+=1
+            pc == 0
+        if computador==p[3] and (usuário==p[4] or usuário==[1]):
+            print("Ganhei facil")
+            pc+=1
+            pu == 0
+        if computador==p[3] and (usuário==p[0] or usuário==[2]):
+            print("Você ganhou")
+            pu+=1
+            pc == 0
+        if computador==p[4] and (usuário==p[0] or usuário==[2]):
+            print("Ta facil de mais")
+            pc+=1
+            pu == 0
+        if computador==p[4] and (usuário==p[1] or usuário==[3]):
+            print("Você ganhou")
+            pu+=1
+            pc == 0
+        if computador==usuário:
+            print("empatou")
+        print("Placar parcial: Super PC: " + str(pc) + " x Mero Mortal: " + str(pu))
+        
+        if pc==3:
+            print("Ganhei!, fácil demais!")
+            print("placar final:")
+            print("Meus pontos:",pc)
+            print("Seus pontos:",pu)
+            answer=input("vamo de novo?")
+        if pu==3:
+            print("Só com hack pra ganhar de mim né")
+            print("placar final:")
+            print("Super PC:",pc)
+            print("Jogador:",pu)
